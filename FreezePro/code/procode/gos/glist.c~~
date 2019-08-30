@@ -1,0 +1,147 @@
+/*********************************************************************************************************
+** 文件名               :   glist.c
+** 创建日期 						:   2018-07-01
+** 初始版本             :   V1.0.0
+** 描述         				:		系统数据结构   
+** 历史修改情况         :
+   **********************************
+		glist.c (V1.0.0)
+		作 者								：  鲜睿
+		日 期               ：  V1.0.0
+	 **********************************
+	 
+**********************************************************************************************************/
+#include "glib.h"
+
+void gNodeInit (LIST_NODE_t * node)
+{
+    node->nextNode = node;
+    node->preNode = node;
+}
+
+void gListInit (LIST_t * list)
+{
+    list->FIRST_NODE = &(list->headNode);
+    list->LAST_NODE = &(list->headNode);
+    list->nodeCount = 0;
+}
+
+uint32_t gListCount (LIST_t * list)
+{
+	return list->nodeCount;
+}
+
+LIST_NODE_t * gListFirst (LIST_t * list)
+{
+    LIST_NODE_t * node = (LIST_NODE_t *)0;
+	
+	if (list->nodeCount != 0) 
+	{
+		node = list->firstNode;
+	}    
+    return  node;
+}
+
+LIST_NODE_t * gListLast (LIST_t * list)
+{
+    LIST_NODE_t * node = (LIST_NODE_t *)0;
+	
+	if (list->nodeCount != 0) 
+	{
+		node = list->lastNode;
+	}    
+    return  node;
+}
+
+LIST_NODE_t * gListPre (LIST_t * list, LIST_NODE_t * node)
+{
+	if (node->preNode == node) 
+	{
+		return (LIST_NODE_t *)0;
+	} 
+	else 
+	{
+		return node->preNode;
+	}
+}
+
+LIST_NODE_t * gListNext (LIST_t * list, LIST_NODE_t * node)
+{
+	if (node->nextNode == node) 
+	{
+		return (LIST_NODE_t *)0;
+	}
+	else 
+	{
+		return node->nextNode;
+	}
+}
+
+void gListRemoveAll (LIST_t * list)
+{
+    uint32_t count;
+    LIST_NODE_t * nextNode;
+    
+    nextNode = list->firstNode;
+    for (count = list->nodeCount; count != 0; count-- )
+    {
+        LIST_NODE_t * currentNode = nextNode;
+        nextNode = nextNode->nextNode;
+       
+       	gNodeInit(currentNode);
+    }
+    gListInit (list);
+}
+
+void gListAddFirst (LIST_t * list, LIST_NODE_t * node)
+{
+    node->preNode = list->firstNode->preNode;
+    node->nextNode = list->firstNode;
+
+    list->firstNode->preNode = node;
+    list->firstNode = node;
+    list->nodeCount++;
+}
+
+void gListAddLast (LIST_t * list, LIST_NODE_t * node)
+{
+    node->nextNode = &(list->headNode);
+    node->preNode = list->lastNode;
+
+    list->lastNode->nextNode = node;
+    list->lastNode = node;
+    list->nodeCount++;
+}
+
+LIST_NODE_t * gListRemoveFirst (LIST_t * list)
+{
+    LIST_NODE_t * node = (LIST_NODE_t *)0;
+
+    if( list->nodeCount != 0 )
+    {
+        node = list->firstNode;
+
+        node->nextNode->preNode = &(list->headNode);
+        list->firstNode = node->nextNode;
+        list->nodeCount--;
+    }
+    return  node;
+}
+
+void gListInsertAfter (LIST_t * list, LIST_NODE_t * nodeAfter,  LIST_NODE_t * nodeToInsert)
+{
+    nodeToInsert->preNode = nodeAfter;
+    nodeToInsert->nextNode = nodeAfter->nextNode;
+
+    nodeAfter->nextNode->preNode = nodeToInsert;
+    nodeAfter->nextNode = nodeToInsert;
+
+    list->nodeCount++;
+}
+
+void tListNodeRemove ((LIST_t * list,  LIST_NODE_t * node)
+{
+    node->preNode->nextNode = node->nextNode;
+    node->nextNode->preNode = node->preNode;
+    list->nodeCount--;
+}

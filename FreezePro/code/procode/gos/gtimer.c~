@@ -1,0 +1,94 @@
+﻿/*********************************************************************************************************
+** ???t??               :   glist.c
+** ¡ä¡ä?¡§¨¨??¨² 						:   2018-07-01
+** 3?¨º?¡ã?¡À?             :   V1.0.0
+** ?¨¨¨º?         				:		?¦Ì¨ª3¨ºy?Y?¨¢11   
+** ¨¤¨²¨º¡¤DT???¨¦??         :
+   **********************************
+		glist.c (V1.0.0)
+		¡Á¡Â ??								¡êo  ?¨º?¡ê
+		¨¨? ?¨²               ¡êo  V1.0.0
+	 **********************************
+	 
+**********************************************************************************************************/
+
+#include "glib.h"
+
+static SOFT_TIMER_t * timerHead = NULL;
+static uint32_t timerticks = 0;
+
+void TimerInit(SOFT_TIMER_t * handle,FUNC_VOID gcall, uint32_t timeout, TIMER_MODE_e mode)
+{
+	if(!handle)
+		return;
+	gNodeInit(&(handle->linkNode));
+	handle->timeout = timerticks + timeout;
+	handle->mode = mode;
+	handle->callback = gcall;
+	handle = timerhead;
+}
+
+uint8_t timer_start(SOFT_TIMER_t * handle)
+{
+	SOFT_TIMER_t * it = timerHead;
+	if(!handle)
+		return 0;
+	while(it)
+       	{
+		if(it == handle) 
+			return 1;	//already exist.
+		it = it->next;
+	}
+	handle->next = timerhead;
+	timerhead = handle;
+	return 0;
+}
+
+/**
+  * @brief  Stop the timer work, remove the handle off work list.
+  * @param  handle: target handle strcut.
+  * @retval None
+  */
+void timer_stop(struct Timer* handle)
+{
+	struct Timer** curr;
+	for(curr = &head_handle; *curr; ) {
+		struct Timer* entry = *curr;
+		if (entry == handle) {
+			*curr = entry->next;
+//			free(entry);
+		} else
+			curr = &entry->next;
+	}
+}
+
+/**
+  * @brief  main loop.
+  * @param  None.
+  * @retval None
+  */
+void timer_loop()
+{
+	struct Timer* target;
+	for(target=head_handle; target; target=target->next) {
+		if(_timer_ticks >= target->timeout) {
+			if(target->repeat == 0) {
+				timer_stop(target);
+			} else {
+				target->timeout = _timer_ticks + target->repeat;
+			}
+			target->timeout_cb();
+		}
+	}
+}
+
+/**
+  * @brief  background ticks, timer repeat invoking interval 1ms.
+  * @param  None.
+  * @retval None.
+  */
+void timer_ticks()
+{
+	_timer_ticks++;
+}
+

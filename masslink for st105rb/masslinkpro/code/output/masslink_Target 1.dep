@@ -1,0 +1,12 @@
+Dependencies for Project 'masslink', Target 'Target 1': (DO NOT MODIFY !)
+F (RTE\Device\STM32F105RB\RTE_Device.h)(0x57D24F70)()
+F (RTE\Device\STM32F105RB\startup_stm32f10x_cl.s)(0x5825386C)(--cpu Cortex-M3 -g --apcs=interwork -I E:\工作项目\硬件设计\工业物联网\masslinkpro\code\project\RTE-I E:\工作项目\硬件设计\工业物联网\masslinkpro\code\project\RTE\Device\STM32F105RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 515" --pd "_RTE_ SETA 1" --pd "STM32F10X_CL SETA 1"--list .\listings\startup_stm32f10x_cl.lst --xref -o ..\output\startup_stm32f10x_cl.o --depend ..\output\startup_stm32f10x_cl.d)
+F (RTE\Device\STM32F105RB\system_stm32f10x.c)(0x5825386C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I E:\工作项目\硬件设计\工业物联网\masslinkpro\code\project\RTE-I E:\工作项目\硬件设计\工业物联网\masslinkpro\code\project\RTE\Device\STM32F105RB-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F10X_CL-o ..\output\system_stm32f10x.o --omf_browse ..\output\system_stm32f10x.crf --depend ..\output\system_stm32f10x.d)
+I (d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\stm32f10x.h)(0x5825386C)
+I (E:\宸ヤ綔椤圭洰\纭欢璁捐\宸ヤ笟鐗╄仈缃慭masslinkpro\code\project\RTE\RTE_Components.h)(0x00000000)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm3.h)(0x5A8E1FE2)
+I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A5595E2)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E1FE2)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E1FE2)
+I (d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include\system_stm32f10x.h)(0x5825386C)

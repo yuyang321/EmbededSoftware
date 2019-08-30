@@ -1,0 +1,56 @@
+#ifndef _GLIB_H_
+#define _GLIB_H_
+
+	#include"stdint.h"
+	typedef void (*FUNC_VOID)(void *);
+	/**************************************************************************************************/
+	typedef struct _LIST_Node_T_
+	{
+			struct _LIST_Node_T_ * preNode;
+			struct _LIST_Node_T_ * nextNode;
+	}LIST_NODE_t;
+	
+	typedef struct _LIST_T_
+	{   
+			LIST_NODE_t headNode;
+			uint32_t nodeCount;
+	}LIST_t;
+	
+	#define firstNode   headNode.nextNode
+	#define lastNode    headNode.preNode
+	//
+	#define tNodeParent(node, parent, name) (parent *)((uint32_t)node - (uint32_t)&((parent *)0)->name)
+	
+	extern void gNodeInit (LIST_NODE_t * node);
+	extern void gListInit (LIST_t * list);	
+	extern uint32_t gListCount (LIST_t * list);
+	extern LIST_NODE_t * gListFirst (LIST_t * list);
+	extern LIST_NODE_t * gListLast (LIST_t * list);
+	extern LIST_NODE_t * gListPre (LIST_t * list, LIST_NODE_t * node);
+	extern LIST_NODE_t * gListNext (LIST_t * list, LIST_NODE_t * node);
+	extern void gListRemoveAll (LIST_t * list);
+	extern void gListAddFirst (LIST_t * list, LIST_NODE_t * node);
+	extern void gListAddLast (LIST_t * list, LIST_NODE_t * node);
+	extern LIST_NODE_t * gListRemoveFirst (LIST_t * list);
+	extern void gListInsertAfter (LIST_t * list, LIST_NODE_t * nodeAfter,  LIST_NODE_t * nodeToInsert);
+	extern void tListNodeRemove (LIST_t * list, LIST_NODE_t * node);	
+	/***************************************************************************************************/
+	
+
+	typedef struct  _SOFT_TIMER_T_{
+    		LIST_NODE_t    linkNode;
+    		uint32_t timeout;
+    		uint32_t mode;
+    		FUNC_VOID callback;
+	}SOFT_TIMER_t;
+	typedef enum	_TIMER_MODE_E_{
+		TIMER_REPEAT_MODE,
+		TIMER_ONECE_MODE,
+	};
+void timer_init(struct Timer* handle, void(*timeout_cb)(), uint32_t timeout, uint32_t repeat);
+int  timer_start(struct Timer* handle);
+void timer_stop(struct Timer* handle);
+void timer_ticks(void);
+void timer_loop(void);
+	
+#endif

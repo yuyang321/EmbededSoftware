@@ -1,0 +1,157 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yu yang, HDU, LIC=LSNNN-YXZUF-2LWCT-RLYEP-AYNSV-Z2V1T
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.24.1
+Toolchain Path:  D:\Program Files (x86)\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.26.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+E:\syn_project\document\FreezePro\code\project\masslink.uvprojx
+Project File Date:  06/12/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Program Files (x86)\Keil_v5\ARM\ARMCC\Bin'
+Build target 'masslinkV1.0.0'
+compiling retarget.c...
+compiling gutility.c...
+compiling gevent.c...
+compiling gpipe.c...
+compiling glist.c...
+compiling gtimer.c...
+assembling girq.s...
+compiling gboot.c...
+compiling stm32f10x_it.c...
+compiling gmain.c...
+compiling ghalcallback.c...
+..\procode\user\ghalcallback.c(92): warning:  #167-D: argument of type "volatile SYS_PRESS_INFOR_s *" is incompatible with parameter of type "SYS_PRESS_INFOR_s *"
+  				gCalPresaVal(&(sysvar.PressInfor));
+..\procode\user\ghalcallback.c: 1 warning, 0 errors
+compiling gusart.c...
+compiling gFreezeUsertask.c...
+..\procode\user\gFreezeUsertask.c(53): warning:  #188-D: enumerated type mixed with another type
+  	
+TATUS_LED1_TOGGLE;
+..\procode\user\gFreezeUsertask.c(193): warning:  #177-D: variable "flowctrltimer"  was declared but never referenced
+  static SOFT_TIMER_t flowctrltimer;	//flow control cycle
+..\procode\user\gFreezeUsertask.c(195): warning:  #177-D: function "gflowctrltimer"  was declared but never referenced
+  static void gflowctrltimer(void *arg)
+..\procode\user\gFreezeUsertask.c: 3 warnings, 0 errors
+compiling system_stm32f10x.c...
+compiling gbsp.c...
+compiling gadc.c...
+compiling gtimer.c...
+compiling giic.c...
+compiling gSensorAlg.c...
+compiling cmd_queue.c...
+compiling gmodbus.c...
+compiling hmi.c...
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling hmi_driver.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_usart.c...
+linking...
+Program Size: Code=20420 RO-data=1080 RW-data=260 ZI-data=5024  
+FromELF: creating hex file...
+".\Objects\masslink.axf" - 0 Error(s), 4 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.2.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: USART Version: 3.5.0
+   * Component: TIM Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: I2C Version: 3.5.0
+   * Component: GPIO Version: 3.5.0
+   * Component: Framework Version: 3.5.1
+   * Component: Flash Version: 3.5.0
+   * Component: EXTI Version: 3.5.0
+   * Component: DMA Version: 3.5.0
+   * Component: ADC Version: 3.5.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_masslinkV1.0.0
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_flash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_flash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_exti.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dma.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dma.c
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+Build Time Elapsed:  00:00:10
+</pre>
+</body>
+</html>

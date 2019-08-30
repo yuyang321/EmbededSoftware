@@ -1,0 +1,8 @@
+--cpu Cortex-M3
+"..\output\glist.o"
+"..\output\startup_stm32f10x_cl.o"
+"..\output\system_stm32f10x.o"
+--strict --scatter "..\output\masslink.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\masslink.map" -o ..\output\masslink.axf

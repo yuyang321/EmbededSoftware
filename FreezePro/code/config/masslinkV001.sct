@@ -1,0 +1,21 @@
+LROM_BOOT 0x08000000 (0x10000)
+{
+	EROM_START +0
+	{
+		gboot.o (STARTVARA,+FIRST)
+		gboot.o (STARTUPFUNC)
+		* (InRoot$$Sections)
+		*.o (+RO)
+	}
+	ERAM_VECT 0x20000000 NOCOMPRESS (0x2800 - 0x1000)
+	{
+		girq.o (RESET,+FIRST)
+		*(+RW,+ZI)
+	}
+	ERAM_STACK_HEAP 0x20001800 NOCOMPRESS (0x1000)
+	{
+		girq.o (HEAP,+FIRST)
+		girq.o (STACK,+LAST)
+	}
+}
+
