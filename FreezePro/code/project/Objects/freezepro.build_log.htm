@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.24.2.0
 Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: xiang Microsoft, Microsoft, LIC=WHY30-BNJK2-BE4HH-WR2MG-MF38X-JYIU4
+License Information: yu yang, HDU, LIC=LSNNN-YXZUF-2LWCT-RLYEP-AYNSV-Z2V1T
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.24.1
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+Toolchain Path:  D:\Program Files (x86)\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 5 (build 528)
 Assembler:       Armasm.exe V5.06 update 5 (build 528)
 Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
@@ -21,12 +21,29 @@ Target DLL:      Segger\JL2CM3.dll V2.99.26.0
 Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
-D:\Cryo\code\project\masslink.uvprojx
-Project File Date:  07/01/2019
+E:\syn_project\document\FreezePro\code\project\masslink.uvprojx
+Project File Date:  07/25/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'masslinkV1.0.0'
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Program Files (x86)\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'masslinkV1.0.0'
+compiling retarget.c...
+compiling gpipe.c...
+compiling gevent.c...
+compiling gtimer.c...
+compiling gutility.c...
+compiling gboot.c...
+compiling glist.c...
+assembling girq.s...
+compiling stm32f10x_it.c...
+compiling ghalcallback.c...
+..\procode\user\ghalcallback.c(92): warning:  #167-D: argument of type "volatile SYS_PRESS_INFOR_s *" is incompatible with parameter of type "SYS_PRESS_INFOR_s *"
+  				gCalPresaVal(&(sysvar.PressInfor));
+..\procode\user\ghalcallback.c: 1 warning, 0 errors
+compiling gmain.c...
+compiling system_stm32f10x.c...
+compiling gbsp.c...
+compiling gusart.c...
 compiling gFreezeUsertask.c...
 ..\procode\user\gFreezeUsertask.c(53): warning:  #188-D: enumerated type mixed with another type
   	
@@ -36,22 +53,40 @@ TATUS_LED1_TOGGLE;
 ..\procode\user\gFreezeUsertask.c(199): warning:  #177-D: function "gflowctrltimer"  was declared but never referenced
   static void gflowctrltimer(void *arg)
 ..\procode\user\gFreezeUsertask.c: 3 warnings, 0 errors
+compiling gadc.c...
+compiling gtimer.c...
+compiling gSensorAlg.c...
+compiling hmi.c...
+compiling gmodbus.c...
+compiling giic.c...
+compiling cmd_queue.c...
+compiling misc.c...
+compiling stm32f10x_dma.c...
+compiling hmi_driver.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
 linking...
 Program Size: Code=26724 RO-data=1368 RW-data=280 ZI-data=5036  
 FromELF: creating hex file...
-".\Objects\freezepro.axf" - 0 Error(s), 3 Warning(s).
+".\Objects\freezepro.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
-                ARM.CMSIS.5.3.0
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.1.1
+   * Component: CORE Version: 5.2.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.2.0.pack
-                Keil.STM32F1xx_DFP.2.2.0
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
    * Component: USART Version: 3.5.0
    * Component: TIM Version: 3.5.0
@@ -66,9 +101,9 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_masslinkV1.0.0
-  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
-  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
-  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
 
 <h2>Collection of Component Files used:</h2>
 
@@ -115,8 +150,8 @@ Package Vendor: Keil
       Include file:  Device\StdPeriph_Driver\inc\stm32f10x_adc.h
       Source file:   Device\StdPeriph_Driver\src\stm32f10x_adc.c
 
-   * Component: ARM::CMSIS:CORE:5.1.1
-Build Time Elapsed:  00:00:07
+   * Component: ARM::CMSIS:CORE:5.2.0
+Build Time Elapsed:  00:00:10
 </pre>
 </body>
 </html>

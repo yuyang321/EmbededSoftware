@@ -2,16 +2,20 @@
 ** File name               :   glist.c
 ** Date created		   			 :   2018-07-01
 ** Version Latest          :   V1.0.0
-** Author Latest           :   core    
+** Author Latest           :   xianrui
 ** File Description        :   LIST
 *********************************************************************************************************
 ** Development Process**
-	(1) glist.c (V1.0.0)	core	2018-07-01
-	
-	 
+	(1) glist.c (V1.0.0)	xianrui	2018-07-01
+
 **********************************************************************************************************/
 #include "glib.h"
-
+/*
+**Func name					:	gNodeInit
+**Input para1				: node can be a list node
+**Reture Value			: FuncError variable
+**Func brief				: Init a List node variable
+*/
 FuncErrorE gNodeInit (LIST_NODE_t * node)
 {
     if(!node)
@@ -20,7 +24,12 @@ FuncErrorE gNodeInit (LIST_NODE_t * node)
     node->preNode = node;
 	return(EXE_FINISH);
 }
-
+/*
+**Func name					:	gNodeInit
+**Input para1				: node can be a list node
+**Reture Value			: FuncError variable
+**Func brief				: Init a List node variable
+*/
 FuncErrorE gListInit (LIST_t * list)
 {
     if(!list)
@@ -43,10 +52,10 @@ LIST_NODE_t * gListFirst (LIST_t * list)
     LIST_NODE_t * node = (LIST_NODE_t *)0;
 	if(!list)
 		return NULL;
-	if (list->nodeCount != 0) 
+	if (list->nodeCount != 0)
 	{
 		node = list->firstNode;
-	}    
+	}
     return  node;
 }
 
@@ -55,10 +64,10 @@ LIST_NODE_t * gListLast (LIST_t * list)
     LIST_NODE_t * node = (LIST_NODE_t *)0;
 	if(!list)
 		return NULL;
-	if (list->nodeCount != 0) 
+	if (list->nodeCount != 0)
 	{
 		node = list->lastNode;
-	}    
+	}
     return  node;
 }
 
@@ -66,11 +75,11 @@ LIST_NODE_t * gListPre (LIST_t * list, LIST_NODE_t * node)
 {
 	if(!(list && node))
 		return NULL;
-	if (node->preNode == node) 
+	if (node->preNode == node)
 	{
 		return (LIST_NODE_t *)0;
-	} 
-	else 
+	}
+	else
 	{
 		return node->preNode;
 	}
@@ -80,11 +89,11 @@ LIST_NODE_t * gListNext (LIST_t * list, LIST_NODE_t * node)
 {
 	if(!(list && node))
 		return NULL;
-	if (node->nextNode == node) 
+	if (node->nextNode == node)
 	{
 		return (LIST_NODE_t *)0;
 	}
-	else 
+	else
 	{
 		return node->nextNode;
 	}
@@ -101,7 +110,7 @@ FuncErrorE gListRemoveAll (LIST_t * list)
     {
         LIST_NODE_t * currentNode = nextNode;
         nextNode = nextNode->nextNode;
-       
+
        	gNodeInit(currentNode);
     }
     gListInit (list);
@@ -169,7 +178,7 @@ FuncErrorE gListInsertAfter (LIST_t * list, LIST_NODE_t * nodeAfter,  LIST_NODE_
 	if(!(list && node))
 		return(PTR_NULL);
 	uint32_t cntcpy =gListCount(list);
-	for(it=(list->firstNode);cntcpy > 0;it = it->nextNode,cntcpy--) 
+	for(it=(list->firstNode);cntcpy > 0;it = it->nextNode,cntcpy--)
 	{
 		if(it == node)
 			return(EXE_FINISH);

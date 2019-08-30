@@ -559,12 +559,13 @@ ARM Macro Assembler    Page 9
               00000800 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\objects\girq.d -o.\objects\girq.o -I.\RTE\_masslinkV1.0.0 -IC:\K
-eil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F
-1xx_DFP\2.2.0\Device\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Dev
-ice\StdPeriph_Driver\inc --predefine="__UVISION_VERSION SETA 524" --predefine="
-_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --list=.\listings\girq.lst ..\p
-rocode\user\girq.s
+ork --depend=.\objects\girq.d -o.\objects\girq.o -I.\RTE\_masslinkV1.0.0 -I"D:\
+Program Files (x86)\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include" -I"D:\
+Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include" -
+I"D:\Program Files (x86)\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPe
+riph_Driver\inc" --predefine="__UVISION_VERSION SETA 524" --predefine="_RTE_ SE
+TA 1" --predefine="STM32F10X_MD SETA 1" --list=.\listings\girq.lst ..\procode\u
+ser\girq.s
 
 
 

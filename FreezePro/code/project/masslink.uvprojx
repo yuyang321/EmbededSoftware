@@ -381,21 +381,6 @@
           <GroupName>gos</GroupName>
           <Files>
             <File>
-              <FileName>glist.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\glist.c</FilePath>
-            </File>
-            <File>
-              <FileName>gtimer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\gtimer.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpipe.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\gpipe.c</FilePath>
-            </File>
-            <File>
               <FileName>retarget.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\procode\gos\retarget.c</FilePath>
@@ -409,6 +394,21 @@
               <FileName>gutility.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\procode\gos\gutility.c</FilePath>
+            </File>
+            <File>
+              <FileName>glist.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\glist.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpipe.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\gpipe.c</FilePath>
+            </File>
+            <File>
+              <FileName>gtimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\gtimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -895,21 +895,6 @@
           <GroupName>gos</GroupName>
           <Files>
             <File>
-              <FileName>glist.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\glist.c</FilePath>
-            </File>
-            <File>
-              <FileName>gtimer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\gtimer.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpipe.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\procode\gos\gpipe.c</FilePath>
-            </File>
-            <File>
               <FileName>retarget.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\procode\gos\retarget.c</FilePath>
@@ -923,6 +908,21 @@
               <FileName>gutility.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\procode\gos\gutility.c</FilePath>
+            </File>
+            <File>
+              <FileName>glist.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\glist.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpipe.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\gpipe.c</FilePath>
+            </File>
+            <File>
+              <FileName>gtimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\procode\gos\gtimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1039,8 +1039,8 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.1.2" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.4.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.2.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
         <targetInfos>
           <targetInfo name="ISO_MassLink"/>
           <targetInfo name="masslinkV1.0.0"/>

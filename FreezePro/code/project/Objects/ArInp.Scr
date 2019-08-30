@@ -1,0 +1,22 @@
+--create .\Objects\freezepro.lib
+.\objects\retarget.o
+.\objects\gevent.o
+.\objects\gutility.o
+..\procode\gos\gos.lib
+.\objects\gboot.o
+.\objects\system_stm32f10x.o
+.\objects\gmain.o
+.\objects\girq.o
+.\objects\stm32f10x_it.o
+.\objects\gfreezeusertask.o
+.\objects\ghalcallback.o
+.\objects\gusart.o
+.\objects\gbsp.o
+.\objects\gadc.o
+.\objects\gtimer_1.o
+.\objects\giic.o
+.\objects\gsensoralg.o
+.\objects\gmodbus.o
+.\objects\cmd_queue.o
+.\objects\hmi.o
+.\objects\hmi_driver.o

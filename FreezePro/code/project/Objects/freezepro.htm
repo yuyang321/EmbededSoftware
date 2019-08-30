@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\freezepro.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\freezepro.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Jul 01 12:03:41 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Jul 25 14:30:27 2019
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1062,9 +1062,9 @@ Global Symbols
 <P><STRONG><a name="[c7]"></a>GosInit</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, gfreezeusertask.o(i.GosInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = GosInit &rArr; GTimerNodeInit &rArr; GTimerStop &rArr; gIsNodeInList
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GFIFOInit
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitTimerlist
+<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitTimerlist
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GTimerNodeInit
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GFIFOInit
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gmbrdflowcrc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -2284,6 +2284,16 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
+<P><STRONG><a name="[100]"></a>ProcessManagerTask</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, gevent.o(i.ProcessManagerTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ProcessManagerTask
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysRun
+</UL>
+
+<P><STRONG><a name="[101]"></a>gidle</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, gevent.o(i.gidle))
+<BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysRun
+</UL>
+
 <P><STRONG><a name="[bb]"></a>gentercritical</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gtimer.o(i.gentercritical))
 <BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_nms
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GTimerNodeInit
@@ -2294,16 +2304,6 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_nms
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GTimerNodeInit
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GTimerLoop
-</UL>
-
-<P><STRONG><a name="[100]"></a>ProcessManagerTask</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, gevent.o(i.ProcessManagerTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ProcessManagerTask
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysRun
-</UL>
-
-<P><STRONG><a name="[101]"></a>gidle</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, gevent.o(i.gidle))
-<BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysRun
 </UL>
 
 <P><STRONG><a name="[9]"></a>gboot</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, gboot.o(STARTUPFUNC))

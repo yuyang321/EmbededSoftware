@@ -2,13 +2,13 @@
 ** File name               :   gpipe.c
 ** Date created		   :   2018-07-01
 ** Version Latest          :   V1.0.0
-** Author Latest           :   core    
-** File Description        :   
+** Author Latest           :   core
+** File Description        :
 *********************************************************************************************************
 ** Development Process**
 	(1) gpipe.c (V1.0.0)	core	2018-07-01
-	
-	 
+
+
 **********************************************************************************************************/
 #include "glib.h"
 
@@ -54,7 +54,7 @@ FuncErrorE GFIFOInit(FIFO_t *pfifo,uint8_t *pbuff,uint32_t len)
 FuncErrorE GFIFOFlush(FIFO_t* pfifo)
 {
 	if(!pfifo)
-		return(PTR_NULL);	
+		return(PTR_NULL);
 	pfifo->r = pfifo->buf;
 	pfifo->w = pfifo->buf;
 	pfifo->cnt = 0;
@@ -64,8 +64,8 @@ FuncErrorE GFIFOFlush(FIFO_t* pfifo)
 FuncErrorE GFIFOPush(FIFO_t* pfifo, uint8_t element)
 {
 	if(!pfifo)
-		return(PTR_NULL);		
-	if (pfifo->cnt == pfifo->len) 
+		return(PTR_NULL);
+	if (pfifo->cnt == pfifo->len)
 	{
 		return EXE_OTHERS;
 	}
@@ -78,8 +78,8 @@ FuncErrorE GFIFOPush(FIFO_t* pfifo, uint8_t element)
 FuncErrorE GFIFOPop(FIFO_t* pfifo,uint8_t *pdata)
 {
 	if(!pfifo)
-		return(PTR_NULL);		
-	if (pfifo->cnt == 0) 
+		return(PTR_NULL);
+	if (pfifo->cnt == 0)
 	{
 		return EXE_OTHERS;
 	}
@@ -92,8 +92,8 @@ FuncErrorE GFIFOPop(FIFO_t* pfifo,uint8_t *pdata)
 FuncErrorE GFIFOPeek(FIFO_t* pfifo,uint8_t *pdatapeek)
 {
 	if(!pfifo)
-		return(PTR_NULL);			
-	if (pfifo->cnt == 0) 
+		return(PTR_NULL);
+	if (pfifo->cnt == 0)
 	{
 		return EXE_OTHERS;
 	}
@@ -104,7 +104,7 @@ FuncErrorE GFIFOPeek(FIFO_t* pfifo,uint8_t *pdatapeek)
 uint8_t GFIFOIsFull(FIFO_t* pfifo)
 {
 	if(!pfifo)
-		return 0;				
+		return 0;
 	return pfifo->cnt == pfifo->len;
 }
 
@@ -118,14 +118,14 @@ uint8_t GFIFOIsEmpty(FIFO_t* pfifo)
 uint32_t GFIFOGetUsed(FIFO_t* pfifo)
 {
 	if(!pfifo)
-		return 0;	
+		return 0;
 	return pfifo->cnt;
 }
 
 uint32_t GFIFOGetFree(FIFO_t* pfifo)
 {
 	if(!pfifo)
-		return 0;	
+		return 0;
 	return pfifo->len - pfifo->cnt;
 }
 
