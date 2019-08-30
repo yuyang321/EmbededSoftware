@@ -1,0 +1,44 @@
+	//When GSM Power On,Recieve "AT Ready",and delievery GSN for GSM Module ID,wait for MQTT server connect OK
+	#define AT_READY								"AT Ready"
+	//Ask for GSM ID
+	#define AT_GSN									"AT+GSN\r\n"
+	#define AT_GSN_RESPONSE					"AT+GSN\r\n\r\n"
+	//wait for MQTT Server Connect OK
+	#define MQTT_READY							"+STATUS: MQTT READY"
+	#define MQTT_CONNECT						"+STATUS: MQTT CONNECT OK"
+	//Config this GSM Module at the first time
+	//Set MQTT Version
+	#define AT_MQTTVER							"AT+MQTTVER=0\r\n"
+	//Set MQTT Mode
+	#define AT_MQTTMODE 						"AT+MQTTMODE=1\r\n"
+	//Set Server IP and Port
+	#define AT_IPPORT								"AT+IPPORT=39.104.114.111,1883\r\n"
+	//Set User Account
+	#define AT_USERPWD							"AT+USERPWD=admin,C3pli510uTsv\r\n"
+	//Set AutoSub
+	#define AT_AUTOSUB  						"AT+AUTOSUB=1,/unitslink/node/AD08/352425024447313/ota,2\r\n"
+	//Set Will Sub
+	#define AT_WILL									"AT+WILL=/unitslink/node/AD08/will,LOST+352425024447313,2,1\r\n"
+	//GSM Config Save
+	#define AT_W										"AT&W\r\n"
+	#define AT_CFUN									"AT+CFUN=1,1\r\n"
+	/*****************************************************************************************************/
+	//Recieve ?¡ãOK?¡À String
+	#define OK											"OK"
+	//After publish infor,">" will be recieved if succeed,or "+CME ERROR" for failiure
+	#define MQTT_PUBLISH_OK_RESPONSE		">"
+	#define MQTT_PUBLISH_FAIL_RESPONSE	"+CME ERROR"
+	//the response of succeed after delievery "AT+STATUS"
+	#define SERVER_HEART_RESPONSE		"NET CONNECT OK!"
+	//the sequence of publish infor
+	#define AT_PUBLISH							"AT+PUBLISH="
+	#define MQTT_SIG_GRADE					",2\r\n"
+	//the topic for responsing the server ota command
+	#define TOPIC_SERVER_CMD_HEAD					"/unitslink/node/AD08/352425024447313/ctrl,"
+	#define TOPIC_SERVER_CMD_SHIFT_BIT		(sizeof("/unitslink/node/AD08/") - 1)
+	//the topic delieverying sensor data
+	#define	TOPIC_DATA_TRANS_HEAD					"/unitslink/node/AD08/352425024447313,"
+	#define TOPIC_DATA_TRANS_SHIFT_BIT		(sizeof("/unitslink/node/AD08/") - 1)
+	//when server delievery ota command,the GSM module will recieve this infor 
+	//#define SUB_SERVER_CMD_INFORA				"topic: /unitslink/node/AD08/352425024447313/ota,23\r\n"
+	#define SUB_SERVER_CMD_INFORA_HEAD		"topic: /unitslink/node/AD08/352425024447313/ota,"

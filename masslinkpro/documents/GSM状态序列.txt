@@ -1,0 +1,54 @@
+AT Ready（接收）
+
+AST_POWERON（接收）
+AT(发送)
+
+OK（接收）
+
++STATUS: MQTT READY（接收）
+
++STATUS: MQTT CONNECT OK（接收）
+Subscribe OK（接收）
+
++CME ERROR
+65 84 10 79 75
+41 54 0D 0A 4F 4B
+
+注意：可靠的GSM上电启动顺序如下：
+GSM复位
+延时100ms
+GSM使能
+延时100ms
+PWON拉高
+延时100ms
+PWON拉低
+延时2500ms
+
+关于如何检测云端与节点连接有效性的问题：
+1、如果网络通信丢失，如天线脱落，针对GSM模块各项查询仍然会有信息返回，模块也不能监测到该问题；
+AT+GSN\r\n\r\n
+
+/unitslink/node/ota/123
+AT+SUBSCRIBE=/unitslink/node/AD08/352425024447313/ota
+topic: /unitslink/node/AD08/352425024447313/ota,19
+
+
+
+AT Ready
+
+AST_POWERON
+
++STATUS: MQTT READY
+
++STATUS: MQTT CONNECT OK
+Subscribe OK
+topic: /unitslink/node/AD08/unitslink/352425024447313/ota,19
+{period:12,order:1}topic: /unitslink/node/AD08/unitslink/352425024447313/ota,19
+{period:12,order:1}
++STATUS: MQTT CLOSE
+
++STATUS: MQTT CONNECT OK
+Subscribe OK
+
+/unitslink/node/AD08/352425025629257
+                    {"sn":"352425024447313#1535811801129557","order":1,"period":60,"repeat":1,"version":"NA"}

@@ -1,0 +1,72 @@
+
+/* Parse text to JSON, then render back to text, and print! */
+//void doit(char *text)
+//{
+//	char *out;cJSON *json;
+//	
+//	json=cJSON_Parse(text);
+//	if (!json) {printf("Error before: [%s]\n",cJSON_GetErrorPtr());}
+//	else
+//	{
+//		out=cJSON_Print(json);
+//		cJSON_Delete(json);
+//		printf("%s\n",out);
+//		free(out);
+//	}
+//}
+char *jtestbuf="{\
+	\"sn\":1234,\
+  \"code\":0, \
+	\"analog1\":89,\
+	\"analog2\":100,\
+  \"analog3\":0,\
+  \"analog4\":0,\
+  \"digital1\":true,\
+  \"digital2\":false,\
+	\"digital3\":false,\
+	\"digital4\":false,\
+	\"digital5\":false,\
+	\"digital6\":false,\
+	\"digital7\":false,\
+	\"digital8\":false\
+}";
+
+uint8_t gCreateJsonObject(void)
+{
+		cJSON *root;
+		root = cJSON_Parse(jtestbuf);
+		if(!root)
+			return 0;
+		char *ptr1 = cJSON_PrintUnformatted(root);
+		printf("%s\n",ptr1);
+		char *ptr2 = cJSON_Print(root);
+		//printf("%s\n",ptr2);
+		
+		int analog1val = cJSON_GetObjectItem(root,"analog1")->valueint;
+		int digitalval = cJSON_GetObjectItem(root,"digital1")->valueint;
+		printf("%d\n",analog1val);
+		printf("%d\n",digitalval);
+//	 cJSON *root;
+//	 root = cJSON_CreateObject();
+//	 if(!root)
+//		 return 0;
+//	 cJSON_AddItemToObject(root, "sn", cJSON_CreateNumber(0));
+//	 cJSON_AddItemToObject(root, "code", cJSON_CreateNumber(0));
+//   cJSON_AddItemToObject(root, "analog1", cJSON_CreateNumber(0));
+//   cJSON_AddItemToObject(root, "analog2", cJSON_CreateNumber(0));
+//   cJSON_AddItemToObject(root, "analog3", cJSON_CreateNumber(0));
+//   cJSON_AddItemToObject(root, "analog4", cJSON_CreateNumber(0));
+//	 cJSON_AddItemToObject(root, "digital1", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital2", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital3", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital4", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital5", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital6", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital7", cJSON_CreateBool(cJSON_False));
+//	 cJSON_AddItemToObject(root, "digital8", cJSON_CreateBool(cJSON_False));
+//	 
+//	 char *ptr = cJSON_PrintUnformatted(root);
+//	 printf("%s\n",ptr);
+	 cJSON_Delete(root);
+	 return 1;
+}
